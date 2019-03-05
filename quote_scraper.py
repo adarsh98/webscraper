@@ -24,9 +24,6 @@ try:
         quote_content = quote.find(class_ = 'text').text
         print(quote_content)'''
 
-    '''for quote in content.findAll(class_ = ['quote', 'text', 'author'])[1]('a'):
-    print(quote.text)'''
-
 except AttributeError:
     print("Nonetype Attribute")
 
