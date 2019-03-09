@@ -29,7 +29,15 @@ def scrape_func(content):
 
 def main():
 
-    url = "http://quotes.toscrape.com/"
+    for i in range(1,11):
+        url = "http://quotes.toscrape.com/page/" + str(i) + "/"
+        response = requests.get(url)
+        content = BeautifulSoup(response.content, "html.parser")
+        scrape_func(content)
+        with open('quotedata.json', 'w') as outfile:
+            json.dump(quote_list, outfile)
+     
+    '''url = "http://quotes.toscrape.com/"
     response = requests.get(url) #option to add timeout
     content = BeautifulSoup(response.content, "html.parser")
 
@@ -46,6 +54,6 @@ def main():
     scrape_func(content2)
 
     with open('quotedata.json', 'w') as outfile:
-        json.dump(quote_list, outfile)
+        json.dump(quote_list, outfile)'''
 main()
         
