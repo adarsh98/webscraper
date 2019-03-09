@@ -14,12 +14,6 @@ for i in range(len(quote_list)):
     val = quote_list[i]
     new_list.append(val[1:(len(val) - 1)]) 
 
-for i in range(len(quote_list)):
-    quote_list[i] = str(quote_list[i])
-
-for i in range(len(quote_list)):
-    quote_list[i] = ''.join(quote_list[i])
-
 words = []
 
 for i in new_list:
